@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dvg0ett6sp8ht"]
+
+[node name="World" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(500, 500)
+scale = Vector2(2.44995, 2.0326)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+scale = Vector2(21.2969, -4.49497)
