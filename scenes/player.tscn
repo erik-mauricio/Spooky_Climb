@@ -50,9 +50,6 @@ animations = [{
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(5, 5)
 script = ExtResource("1_gm10c")
-speed = 200
-jump_speed = -300
-acceleration = 0.5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.54, 0.5)
