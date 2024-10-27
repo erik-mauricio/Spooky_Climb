@@ -1,25 +1,36 @@
 extends CharacterBody2D
 
+@export var speed = 100
+@export var jump_speed = -100
+@export var gravity = 500
+@export_range(0.0, 1.0) var friction = 0.1
+@export_range(0.0 , 1.0) var acceleration = 0.25
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+@onready var sprite = $AnimatedSprite2D
+@export var move_animation_speed = 2
+@export var idle_animation_speed = 1
 
-
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
+func _physics_process(delta):
+	velocity.y += gravity * delta
+	var dir = Input.get_axis("left", "right")
+	
+	# Movement logic
+	if dir != 0:
+		velocity.x = lerp(velocity.x, dir * speed, acceleration)
+		# Set animation speed for movement
+		sprite.speed_scale = move_animation_speed
+		# Play the appropriate moving animation
+		if dir > 0:
+			sprite.play("move_right")
+		else:
+			sprite.play("move_left")
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = lerp(velocity.x, 0.0, friction)
+		# Set animation speed for idle
+		sprite.speed_scale = idle_animation_speed
 
 	move_and_slide()
+	
+	# Jump logic
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = jump_speed

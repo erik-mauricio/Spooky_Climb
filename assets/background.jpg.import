@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://c83xcbltks7ue"
+path="res://.godot/imported/background.jpg-3c1ee7bbff6a1283595ccc69bb1d6acd.image"
+
+[deps]
+
+source_file="res://assets/background.jpg"
+dest_files=["res://.godot/imported/background.jpg-3c1ee7bbff6a1283595ccc69bb1d6acd.image"]
+
+[params]
+
