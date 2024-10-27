@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dyfo1fsthoww3"]
+[gd_scene load_steps=11 format=3 uid="uid://c3fedsbv30ouf"]
 
 [ext_resource type="Texture2D" uid="uid://b1ylcxpy4t8am" path="res://Halloween Characters/Witch/left/Witch1.png" id="1_beyq8"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_gm10c"]

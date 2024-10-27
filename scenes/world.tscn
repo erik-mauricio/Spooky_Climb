@@ -1,6 +1,10 @@
-[gd_scene format=3 uid="uid://dvg0ett6sp8ht"]
+[gd_scene load_steps=2 format=3 uid="uid://dwumiqgw88fni"]
+
+[ext_resource type="PackedScene" uid="uid://c3fedsbv30ouf" path="res://scenes/player.tscn" id="1_nh7he"]
 
 [node name="World" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_nh7he")]
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(500, 500)
@@ -8,3 +12,4 @@ scale = Vector2(2.44995, 2.0326)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 scale = Vector2(21.2969, -4.49497)
+polygon = PackedVector2Array(-5.7689, 6.67654, 6.82302, 6.23873, 12.6111, -13.9003, -13.3777, -18.7162, -13.2436, 17.0744)
