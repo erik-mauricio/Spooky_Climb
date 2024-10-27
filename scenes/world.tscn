@@ -7,4 +7,4 @@ position = Vector2(500, 500)
 scale = Vector2(2.44995, 2.0326)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-scale = Vector2(21.2969, -4.49497)
+scale = Vector2(21.3484, -4.49497)
